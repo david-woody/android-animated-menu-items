@@ -6,8 +6,12 @@ pipeline {
   stages {
     stage('init') {
       steps {
-        sh 'chmod +x gralew'
+        sh 'chmod +x gradlew'
       }
+    }
+    stage('gradle test'){
+        //gradle 测试
+        sh "gradle --version"
     }
   }
 }
