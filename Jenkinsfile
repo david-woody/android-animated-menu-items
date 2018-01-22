@@ -13,6 +13,13 @@ pipeline {
   }
    //定义mvn环境
   stages {
+    stage ('Verify Tools'){
+      steps {
+        parallel (
+          gradle: { sh "npm -v" },
+        )
+      }
+    }
     stage('Compile') {
       steps {
         // Compile the app and its dependencies
